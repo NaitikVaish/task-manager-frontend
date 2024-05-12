@@ -26,11 +26,11 @@ const Home = () => {
             <li className="hover:text-blue-700 hover:font-bold"><a href="#contact">Contact Us</a></li>
           </ul>
           <div className="hidden lg:flex justify-center space-x-12 items-center">
-            <a href="/log-in" className="py-2 px-3 border rounded-md bg-gradient-to-r from-blue-500 to-blue-700 font-bold text-white">
+            <a href="/login" className="py-2 px-3 border rounded-md bg-gradient-to-r from-blue-500 to-blue-700 font-bold text-white">
               Sign In
             </a>
             <a
-              href="/sign-up"
+              href="/signup"
               className="bg-gradient-to-r from-blue-500 to-blue-700 py-2 px-3 rounded-md font-bold text-white"
             >
               Create an account
@@ -80,7 +80,7 @@ const Home = () => {
       </p>
       <div className="flex justify-center my-10">
         <a
-          href="/sign-up"
+          href="/signup"
           className="bg-gradient-to-r from-blue-500 to-blue-800 py-3 px-4 mx-3 rounded-md font-bold text-white"
         >
           Start for free
