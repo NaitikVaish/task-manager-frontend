@@ -1,8 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo1 from "../assets/logo1.png";
-import vid from "../assets/vid.mp4";
-import vid1 from "../assets/vid1.mp4";
 import { features } from "../constants";
 import { testimonials } from "../constants";
 import { resourcesLinks, platformLinks, communityLinks } from "../constants";
