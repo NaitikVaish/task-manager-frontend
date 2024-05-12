@@ -102,7 +102,7 @@ const Login = () => {
               </span>
 
               <span className="text-center">Create an account ? {" "}
-                <Link to='/sign-up' className='font-bold cursor-pointer hover:text-blue-600 hover:underline'>
+                <Link to='/signup' className='font-bold cursor-pointer hover:text-blue-600 hover:underline'>
                   Sign Up
                 </Link>
               </span>

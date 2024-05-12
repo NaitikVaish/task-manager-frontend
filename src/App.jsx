@@ -106,8 +106,8 @@ function App() {
           <Route path='/todo/:status' element={<Tasks />} />
           <Route path='/team' element={<Users />} />
       </Route>
-        <Route path="/sign-up" element={<Signup />} />
-        <Route path='/log-in' element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path='/login' element={<Login />} />
         <Route path="/docu" element={<Docu />} />
       </Routes>
 

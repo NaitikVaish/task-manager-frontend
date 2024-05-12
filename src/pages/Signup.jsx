@@ -16,7 +16,7 @@ const Signup = () => {
   const submitHandler = async (data)=> {
     try{
         await axios.post(`${ServerUrl}/api/user/register`, {...data, role: userType, isAdmin: userType === "Admin"}).then(() => {
-            navigate("/log-in");
+            navigate("/login");
         });
     } catch(error) {
         console.log("Error Signup Page :: " + error);

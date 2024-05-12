@@ -52,11 +52,11 @@ const Home = () => {
               ))}
             </ul>
             <div className="flex space-x-6">
-              <a href="/log-in" className="py-2 px-3 border rounded-md bg-gradient-to-r from-blue-500 to-blue-700 text-white">
+              <a href="/login" className="py-2 px-3 border rounded-md bg-gradient-to-r from-blue-500 to-blue-700 text-white">
                 Sign In
               </a>
               <a
-                href="/sign-up"
+                href="/signup"
                 className="py-2 px-3 rounded-md bg-gradient-to-r from-blue-500 to-blue-700 text-white"
               >
                 Create an account
