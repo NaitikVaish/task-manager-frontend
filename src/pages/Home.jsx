@@ -92,24 +92,9 @@ const Home = () => {
         </a>
       </div>
       <div className="flex mt-40 justify-center">
-        <video
-          autoPlay
-          loop
-          muted
-          className="rounded-lg w-1/3 border border-blue-700 shadow-sm shadow-blue-400 mx-2 my-4"
-        >
-          <source src={vid} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <video
-          autoPlay
-          loop
-          muted
-          className="rounded-lg w-1/3 border border-blue-700 shadow-sm shadow-blue-400 mx-2 my-4"
-        >
-          <source src={vid1} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+       
+        <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d" className="rounded-lg w-1/3 border border-blue-700 shadow-sm shadow-blue-400 mx-2 my-4"/>
+        <img src="https://images.unsplash.com/photo-1634078111133-a1e12d6131b6" className="rounded-lg w-1/3 border border-blue-700 shadow-sm shadow-blue-400 mx-2 my-4"/>
       </div>
     </div>
 
