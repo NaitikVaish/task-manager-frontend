@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { getInitials } from "../utils";
 import axios from "axios";
 import { logout } from "../redux/slices/authSlice";
+const ServerUrl = import.meta.env.VITE_SERVER_URL;
 
 const UserAvatar = () => {
   const [open, setOpen] = useState(false);
@@ -17,7 +18,7 @@ const UserAvatar = () => {
 
   const logoutHandler = async() => {
     try {
-      await axios.post("/api/user/logout")
+      await axios.post(`${ServerUrl}/api/user/logout`)
       .then(() => {
         dispatch(logout(user));
         navigate("/login");
