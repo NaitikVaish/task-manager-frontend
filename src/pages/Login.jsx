@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { setCredentials } from "../redux/slices/authSlice";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+const ServerUrl = import.meta.env.VITE_SERVER_URL;
 
 const Login = () => {
   const { user } = useSelector((state) => state.auth);
@@ -21,7 +22,7 @@ const Login = () => {
   const submitHandler = async (data) => {
     try {
       console.log(data);
-      await axios.post("http://localhost:8000/api/user/login", data, {
+      await axios.post(`${ServerUrl}/api/user/login`, data, {
         withCredentials:true
       })
       .then((response) => {

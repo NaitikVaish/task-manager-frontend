@@ -8,6 +8,7 @@ import clsx from "clsx";
 import { BGS, TASK_TYPE, getInitials } from "../utils";
 import UserInfo from "../components/UserInfo";
 import axios from "axios";
+const ServerUrl = import.meta.env.VITE_SERVER_URL;
 
 const TaskTable = ({ tasks }) => {
   
@@ -156,7 +157,7 @@ const Dashboard = () => {
 
   const fetchDashboard = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/task/dashboard", {
+      const res = await axios.get(`${ServerUrl}/api/task/dashboard`, {
         withCredentials: true,
       });
       setDashboardData(res.data);

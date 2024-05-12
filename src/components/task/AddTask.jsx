@@ -8,6 +8,7 @@ import SelectList from "../SelectList";
 import { BiImages } from "react-icons/bi";
 import Button from "../Button";
 import axios from "axios";
+const ServerUrl = import.meta.env.VITE_SERVER_URL;
 
 const LISTS = ["TODO", "IN PROGRESS", "COMPLETED"];
 
@@ -30,7 +31,7 @@ const AddTask = ({ open, setOpen, task: prevTask, setRefresh }) => {
       date: data.date,
     }
     try {
-        await axios.post("http://localhost:8000/api/task/create", formData, {
+        await axios.post(`${ServerUrl}/api/task/create`, formData, {
           withCredentials: true,
         })
         setRefresh(true);
@@ -48,7 +49,7 @@ const AddTask = ({ open, setOpen, task: prevTask, setRefresh }) => {
       date: data.date,
     }
     try {
-        await axios.put(`http://localhost:8000/api/task/update/${prevTask._id}`, formData, {
+        await axios.put(`${ServerUrl}/api/task/update/${prevTask._id}`, formData, {
           withCredentials: true,
         })
         setRefresh(true);

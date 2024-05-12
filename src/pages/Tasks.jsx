@@ -13,6 +13,7 @@ import Table from "../components/task/Table";
 import AddTask from "../components/task/AddTask";
 import axios from "axios";
 import { useSelector } from "react-redux";
+const ServerUrl = import.meta.env.VITE_SERVER_URL;
 
 const TABS = [
   { title: "Board View", icon: <MdGridView /> },
@@ -40,7 +41,7 @@ const Tasks = () => {
   const fetchTasks = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:8000/api/task", {
+      const res = await axios.get(`${ServerUrl}/api/task`, {
         withCredentials: true,
       });
       const filteredTasks = (status && status !== "all") ? res.data.tasks.filter((task) => task.stage === status) : res.data.tasks;

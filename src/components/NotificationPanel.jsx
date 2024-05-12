@@ -6,6 +6,7 @@ import { BiSolidMessageRounded } from "react-icons/bi";
 import { HiBellAlert } from "react-icons/hi2";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { Link } from "react-router-dom";
+const ServerUrl = import.meta.env.VITE_SERVER_URL;
 
 const ICONS = {
   alert: (
@@ -26,7 +27,7 @@ const NotificationPanel = () => {
 
   const readHandler = async(readType, id) => {
     try {
-      await axios.put(`http://localhost:8000/api/user/read-noti?isReadType=${readType}&id=${id}`,{},{
+      await axios.put(`${ServerUrl}/api/user/read-noti?isReadType=${readType}&id=${id}`,{},{
         withCredentials: true,
       })
       viewHandler()
@@ -36,7 +37,7 @@ const NotificationPanel = () => {
   };
 
   const viewHandler = async() => {
-    await axios.get(`http://localhost:8000/api/user/notifications`,{
+    await axios.get(`${ServerUrl}/api/user/notifications`,{
       withCredentials: true,
     }).then((res) => {
       setData(res.data)

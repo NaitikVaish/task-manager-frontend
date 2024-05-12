@@ -10,6 +10,7 @@ import AddTask from "./AddTask";
 import AddSubTask from "./AddSubTask";
 import ConfirmatioDialog from "../Dialogs";
 import axios from "axios";
+const ServerUrl = import.meta.env.VITE_SERVER_URL;
 
 const TaskDialog = ({ task, setRefresh }) => {
   const [open, setOpen] = useState(false);
@@ -20,7 +21,7 @@ const TaskDialog = ({ task, setRefresh }) => {
 
   const duplicateHandler = async() => {
     try {
-      await axios.post(`http://localhost:8000/api/task/duplicate/${task._id}`, task, {
+      await axios.post(`${ServerUrl}/api/task/duplicate/${task._id}`, task, {
         withCredentials: true,
       });
       setRefresh(true)
@@ -31,7 +32,7 @@ const TaskDialog = ({ task, setRefresh }) => {
 
   const deleteClicks = async () => {
     try {
-      await axios.delete(`http://localhost:8000/api/task/delete/${task._id}`, {
+      await axios.delete(`${ServerUrl}/api/task/delete/${task._id}`, {
         withCredentials: true,
       });
       setRefresh(true)

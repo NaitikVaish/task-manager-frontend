@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Button from '../components/Button';
 import Textbox from '../components/Textbox';
+const ServerUrl = import.meta.env.VITE_SERVER_URL;
 
 const Signup = () => {
     const {user} = useSelector((state) => state.auth);
@@ -14,7 +15,7 @@ const Signup = () => {
 
   const submitHandler = async (data)=> {
     try{
-        await axios.post("http://localhost:8000/api/user/register", {...data, role: userType, isAdmin: userType === "Admin"}).then(() => {
+        await axios.post(`${ServerUrl}/api/user/register`, {...data, role: userType, isAdmin: userType === "Admin"}).then(() => {
             navigate("/log-in");
         });
     } catch(error) {

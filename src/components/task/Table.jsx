@@ -15,6 +15,7 @@ import Button from "../Button";
 import ConfirmatioDialog from "../Dialogs";
 import axios from "axios";
 import { useSelector } from "react-redux";
+const ServerUrl = import.meta.env.VITE_SERVER_URL;
 
 const ICONS = {
   high: <MdKeyboardDoubleArrowUp />,
@@ -34,7 +35,7 @@ const Table = ({ tasks, setRefresh }) => {
 
   const deleteHandler = async() => {
     try {
-      await axios.delete(`http://localhost:8000/api/task/delete/${selected}`, {
+      await axios.delete(`${ServerUrl}/api/task/delete/${selected}`, {
         withCredentials: true,
       });
       setRefresh(true)

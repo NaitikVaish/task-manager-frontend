@@ -6,6 +6,7 @@ import { getInitials } from "../../utils";
 import { MdCheck } from "react-icons/md";
 import axios from "axios";
 import { useSelector } from "react-redux";
+const ServerUrl = import.meta.env.VITE_SERVER_URL;
 
 const UserList = ({ setTeam, team }) => {
   const [userList, setUserList] = useState();
@@ -19,7 +20,7 @@ const UserList = ({ setTeam, team }) => {
 
   const fetchUserList = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/user/get-team", {
+      const res = await axios.get(`${ServerUrl}/api/user/get-team`, {
         withCredentials: true,
       });
       console.log(res.data);

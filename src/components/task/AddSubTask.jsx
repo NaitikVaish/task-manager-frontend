@@ -4,6 +4,7 @@ import { Dialog } from "@headlessui/react";
 import Textbox from "../Textbox";
 import Button from "../Button";
 import axios from "axios";
+const ServerUrl = import.meta.env.VITE_SERVER_URL;
 
 const AddSubTask = ({ open, setOpen, id, setRefresh }) => {
   const {
@@ -17,7 +18,7 @@ const AddSubTask = ({ open, setOpen, id, setRefresh }) => {
   const handleOnSubmit = async (data) => {
     try {
       await axios.put(
-        `http://localhost:8000/api/task/create-subtask/${id}`,
+        `${ServerUrl}/api/task/create-subtask/${id}`,
         data,
         {
           withCredentials: true,
