@@ -38,7 +38,7 @@ function Layout() {
       </div>
     </div>
   ) : (
-    <Navigate to='/log-in' state={{ from: location }} replace />
+    <Navigate to='/login' state={{ from: location }} replace />
   );
 }
 
