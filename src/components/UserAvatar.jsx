@@ -20,7 +20,7 @@ const UserAvatar = () => {
       await axios.post("/api/user/logout")
       .then(() => {
         dispatch(logout(user));
-        navigate("/log-in");
+        navigate("/login");
       });
     } catch (error) {
       console.log("Error UserAvatar :: logout :: ", error);  
